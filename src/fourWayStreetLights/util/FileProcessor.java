@@ -7,8 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class FileProcessor 
-{
+public class FileProcessor {
 	Scanner input;
 	int i=1;
 	private BufferedReader br;

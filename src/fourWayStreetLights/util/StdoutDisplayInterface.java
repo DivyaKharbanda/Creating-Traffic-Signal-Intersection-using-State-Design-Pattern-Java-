@@ -1,5 +1,5 @@
 package fourWayStreetLights.util;
 
-public interface StdoutDisplayInterface {
+public class StdoutDisplayInterface {
 
 }
