@@ -10,16 +10,5 @@ public class Driver {
 		StretLightsContext StretLightsContextObj =  new StretLightsContext();
 		StretLightsContextObj.readFile(filename);
 		
-		/*
-		 * *try 
-		 * {
-			fp.ReadLine(filename);
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
-		 */
-		
 	}
 }

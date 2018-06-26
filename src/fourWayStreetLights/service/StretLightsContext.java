@@ -8,34 +8,45 @@ import fourWayStreetLights.util.FileProcessor;
 public class StretLightsContext {
 
 	String filename;
-	ArrayList<String> NorthCars = new ArrayList<String>();
-	ArrayList<String> SouthCars = new ArrayList<String>();
-	ArrayList<String> WestCars = new ArrayList<String>();
-	ArrayList<String> EastCars = new ArrayList<String>();
 	
+	static String currentState = "Red";
+	static String carDirection = "North";
+	
+	final static String Moving = "Green Light";
+	final static String Stop = "Red Light";
+	final static String Gone = "All cars are gone";
+	
+	SetStartStateImpl SetStartStateImplObj = new SetStartStateImpl();
+	SetCarMovingStateImpl SetCarMovingStateImplObj = new SetCarMovingStateImpl();
+	SetCarStopStateImpl SetCarStopStateImplObj = new SetCarStopStateImpl();
+
+		public static ArrayList<String> NorthCars = new ArrayList<String>();
+		public static ArrayList<String> SouthCars = new ArrayList<String>();
+		public static ArrayList<String> WestCars = new ArrayList<String>();
+		public static ArrayList<String> EastCars = new ArrayList<String>();
+	
+
 	public void readFile(String filename2)
 	{
 		FileProcessor FileProcessorObj = new FileProcessor();
 		try {
 			while((filename = FileProcessorObj.ReadLine(filename2))!=null)
 			{
-				if(filename.contains(", North"))
+				if((filename.contains(", North")) || (filename.contains(", South"))
+						|| (filename.contains(", East")) || (filename.contains(", West")))
 				{
-					NorthCars.add(filename.split(",")[0]);
+					SetStartStateImplObj.insertNewCar(filename);
 				}
-				if(filename.contains(", South"))
+				if((filename.contains("Green light at North")) || (filename.contains("Green light at West"))||
+					(filename.contains("Green light at East")) || (filename.contains("Green light at South")))
 				{
-					SouthCars.add(filename.split(",")[0]);
+					SetCarMovingStateImplObj.removeCars(filename);
 				}
-				if(filename.contains(", East"))
+				if((filename.contains("Red light at North")) || (filename.contains("Red light at West"))||
+						(filename.contains("Red light at East")) || (filename.contains("Red light at South")))
 				{
-					EastCars.add(filename.split(",")[0]);
-				}
-				if(filename.contains(", West"))
-				{
-					WestCars.add(filename.split(",")[0]);
-					System.out.println(WestCars);
-				}
+					SetCarStopStateImplObj.carStopState(filename);
+				}	
 			}
 		} catch (IOException e) 
 		{

@@ -2,14 +2,17 @@
 2, North
 3, West
 4, South
-Green light at East Direction
+Green light at North Direction
 5, West
 6, South
 7, North
-Green light at North Direction
+8, East
+Green light at South Direction
 8, North
 9, West
 10, South
+Red light at West Direction
+Red light at East Direction
 15, West
 16, South
 11, North
