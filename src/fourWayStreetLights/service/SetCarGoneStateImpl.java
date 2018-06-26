@@ -13,7 +13,10 @@ public class SetCarGoneStateImpl implements StreetLightsStateI
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * if the number of cars is equal to 0, then
+	 * cars will go in Gone state
+	 */
 	@Override
 	public void carStopState(String filename) 
 	{

@@ -14,6 +14,11 @@ public class SetCarStopStateImpl implements StreetLightsStateI {
 		
 	}
 
+	/**
+	 * This method will check if the light is green
+	 * and according to the direction in input file
+	 * , it will just stop the car. 
+	 */
 	@Override
 	public void carStopState(String filename) {
 					if(filename.contains("Red light at North"))
