@@ -1,21 +1,25 @@
 package fourWayStreetLights.driver;
 
-import java.io.IOException;
-
-import fourWayStreetLights.util.FileProcessor;
+import fourWayStreetLights.service.StretLightsContext;
 
 public class Driver {
+	
 	public static void main(String[] args) 
 	{
 		String filename = args[0] ;
-		FileProcessor fp= new FileProcessor();
-		try 
-		{
+		StretLightsContext StretLightsContextObj =  new StretLightsContext();
+		StretLightsContextObj.readFile(filename);
+		
+		/*
+		 * *try 
+		 * {
 			fp.ReadLine(filename);
 		} 
 		catch (IOException e) 
 		{
 			e.printStackTrace();
 		}
+		 */
+		
 	}
 }

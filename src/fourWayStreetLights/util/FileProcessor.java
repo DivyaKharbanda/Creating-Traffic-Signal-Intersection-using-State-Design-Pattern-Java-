@@ -14,31 +14,35 @@ public class FileProcessor {
 	
 	public String ReadLine(String file_name) throws IOException {
 		String file = file_name;
-		try {
+		try 
+		{
 			br = new BufferedReader(new FileReader(file));     
-			if (br.readLine() == null) {
+			if (br.readLine() == null) 
+			{
 			    System.out.println("file empty");
-			}					
-			
-		if (i == 1) {
-		input = new Scanner(new File(file));
+			}								
+		if (i == 1) 
+		{
+			input = new Scanner(new File(file));
 			i++;
 		}
-		
-			try {
-			if (input.hasNext()) {
-				String line;
-				line = input.nextLine();
-				System.out.println(line);
-				return line;
+			try 
+			{
+				if (input.hasNext()) 
+					{
+						String line;
+						line = input.nextLine();
+						System.out.println(line);
+						return line;
+					}
 			}
-			}
-			catch (Exception e) {
+			catch (Exception e) 
+			{
 				e.printStackTrace();
-			}
-			
+			}	
 		}
-		catch (FileNotFoundException e) {
+		catch (FileNotFoundException e) 
+		{
 			System.out.println("There is no file present");
 		}
 	

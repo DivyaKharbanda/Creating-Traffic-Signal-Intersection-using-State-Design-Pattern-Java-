@@ -1,2 +1,31 @@
-abcdfe
-sdf
+1, North
+2, North
+3, West
+4, South
+Green light at East Direction
+5, West
+6, South
+7, North
+Green light at North Direction
+8, North
+9, West
+10, South
+15, West
+16, South
+11, North
+Green light at East Direction
+Green light at South Direction
+12, North
+13, West
+14, East
+25, East
+Red light at North Direction
+26, South
+51, North
+Green light at West Direction
+62, North
+63, East
+Red light at East Direction
+74, South
+85, West
+76, East
