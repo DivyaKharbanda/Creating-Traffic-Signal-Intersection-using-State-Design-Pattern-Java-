@@ -4,11 +4,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import fourWayStreetLights.util.FileProcessor;
+import fourWayStreetLights.util.Logger;
+import fourWayStreetLights.util.Logger.DebugLevel;
+
 
 public class StretLightsContext {
 
 	String filename;
-	
+	/**
+	 * here I have by default taken 2 variables which will be
+	 * changed according to the data in input file.
+	 *
+	 */
+	DebugLevel ContextState = null;
 	static String currentState = "Red";
 	static String carDirection = "North";
 	
@@ -19,6 +27,7 @@ public class StretLightsContext {
 	SetStartStateImpl SetStartStateImplObj = new SetStartStateImpl();
 	SetCarMovingStateImpl SetCarMovingStateImplObj = new SetCarMovingStateImpl();
 	SetCarStopStateImpl SetCarStopStateImplObj = new SetCarStopStateImpl();
+	SetCarGoneStateImpl SetCarGoneStateImplObj = new SetCarGoneStateImpl();
 
 		public static ArrayList<String> NorthCars = new ArrayList<String>();
 		public static ArrayList<String> SouthCars = new ArrayList<String>();
@@ -32,10 +41,13 @@ public class StretLightsContext {
 		try {
 			while((filename = FileProcessorObj.ReadLine(filename2))!=null)
 			{
+				String message = "---------------------------------------";
+				Logger.writeMessage(message, ContextState);
 				if((filename.contains(", North")) || (filename.contains(", South"))
 						|| (filename.contains(", East")) || (filename.contains(", West")))
 				{
 					SetStartStateImplObj.insertNewCar(filename);
+					//System.out.println("Size");
 				}
 				if((filename.contains("Green light at North")) || (filename.contains("Green light at West"))||
 					(filename.contains("Green light at East")) || (filename.contains("Green light at South")))
@@ -47,6 +59,7 @@ public class StretLightsContext {
 				{
 					SetCarStopStateImplObj.carStopState(filename);
 				}	
+				SetCarGoneStateImplObj.carStopState(filename);
 			}
 		} catch (IOException e) 
 		{

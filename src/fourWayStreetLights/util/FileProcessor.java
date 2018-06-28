@@ -7,6 +7,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * this method is used to read the input file and return each value
+ * one by one. In this method, I also take care of the exception 
+ * handling
+ *
+ */
 public class FileProcessor {
 	Scanner input;
 	int i=1;
@@ -32,7 +38,7 @@ public class FileProcessor {
 					{
 						String line;
 						line = input.nextLine();
-						System.out.println(line);
+						//System.out.println(line);
 						return line;
 					}
 			}

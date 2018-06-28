@@ -1,34 +1,21 @@
 1, North
 2, North
+10, North
 3, West
 4, South
 Green light at North Direction
 5, West
 6, South
-7, North
-8, East
+Green light at West Direction
+7, South
 Green light at South Direction
-8, North
-9, West
-10, South
-Red light at West Direction
-Red light at East Direction
-15, West
-16, South
-11, North
+8, East
+9, East
+Red light at South Direction
+Green light at North Direction
 Green light at East Direction
 Green light at South Direction
-12, North
-13, West
-14, East
-25, East
-Red light at North Direction
-26, South
-51, North
-Green light at West Direction
-62, North
-63, East
+Green light at South Direction
+15, West
 Red light at East Direction
-74, South
-85, West
-76, East
+Green light at West Direction

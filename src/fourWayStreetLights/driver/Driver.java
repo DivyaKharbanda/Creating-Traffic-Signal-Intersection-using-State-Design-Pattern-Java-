@@ -6,9 +6,14 @@ public class Driver {
 	
 	public static void main(String[] args) 
 	{
-		String filename = args[0] ;
-		StretLightsContext StretLightsContextObj =  new StretLightsContext();
-		StretLightsContextObj.readFile(filename);
+		if((args.length >0) && (args.length)<3 )
+		{
+			String filename = args[0] ;
+			StretLightsContext StretLightsContextObj =  new StretLightsContext();
+			StretLightsContextObj.readFile(filename);
+		}
+		else
+			System.out.println("Invalid number of command line arguements.");
 		
 	}
 }

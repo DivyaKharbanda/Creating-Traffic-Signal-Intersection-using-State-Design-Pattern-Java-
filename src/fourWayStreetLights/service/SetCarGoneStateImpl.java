@@ -1,5 +1,8 @@
 package fourWayStreetLights.service;
 
+import fourWayStreetLights.util.Logger;
+import fourWayStreetLights.util.Logger.DebugLevel;
+
 public class SetCarGoneStateImpl implements StreetLightsStateI
 {
 	@Override
@@ -7,7 +10,7 @@ public class SetCarGoneStateImpl implements StreetLightsStateI
 		// TODO Auto-generated method stub
 		
 	}
-
+	DebugLevel GoneState = null;
 	@Override
 	public void removeCars(String filename) {
 		// TODO Auto-generated method stub
@@ -20,26 +23,14 @@ public class SetCarGoneStateImpl implements StreetLightsStateI
 	@Override
 	public void carStopState(String filename) 
 	{
-		if(StretLightsContext.NorthCars.size()==0)
+		if((StretLightsContext.NorthCars.size()==0) && (StretLightsContext.SouthCars.size()==0) 
+				&& (StretLightsContext.EastCars.size()==0) && (StretLightsContext.WestCars.size()==0) )
 		{
+			String message = "---------------------------------------";
+			Logger.writeMessage(message, GoneState);
 			StretLightsContext.currentState = StretLightsContext.Gone;
-			StretLightsContext.carDirection = "North";
-		}
-		if(StretLightsContext.SouthCars.size()==0)
-		{
-			StretLightsContext.currentState = StretLightsContext.Gone;
-			StretLightsContext.carDirection = "South";
-		}
-		if(StretLightsContext.EastCars.size()==0)
-		{
-			StretLightsContext.currentState = StretLightsContext.Gone;
-			StretLightsContext.carDirection = "East";
-		}
-		if(StretLightsContext.WestCars.size()==0)
-		{
-			StretLightsContext.currentState = StretLightsContext.Gone;
-			StretLightsContext.carDirection = "West";
-		}
+			message = StretLightsContext.currentState+" from all the directions";
+			Logger.writeMessage(message, GoneState);
+		}		
 	}
-
 }
