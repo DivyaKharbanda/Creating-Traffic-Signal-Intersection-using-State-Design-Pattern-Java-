@@ -25,7 +25,7 @@ public class FileProcessor {
 			br = new BufferedReader(new FileReader(file));     
 			if (br.readLine() == null) 
 			{
-			    System.out.println("file empty");
+			    System.out.println("File is empty");
 			}								
 		if (i == 1) 
 		{
@@ -38,7 +38,6 @@ public class FileProcessor {
 					{
 						String line;
 						line = input.nextLine();
-						//System.out.println(line);
 						return line;
 					}
 			}
@@ -49,7 +48,11 @@ public class FileProcessor {
 		}
 		catch (FileNotFoundException e) 
 		{
-			System.out.println("There is no file present");
+			System.out.println("No file is present");
+		}
+		finally
+		{
+			br.close();
 		}
 	
 		return null;

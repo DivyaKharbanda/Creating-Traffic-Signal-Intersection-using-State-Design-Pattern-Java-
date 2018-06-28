@@ -1,0 +1,76 @@
+---------------------------------------
+Adding Car1 in North Direction
+---------------------------------------
+Adding Car2 in North Direction
+---------------------------------------
+Adding Car10 in North Direction
+---------------------------------------
+Adding Car3 in West Direction
+---------------------------------------
+Adding Car4 in South Direction
+---------------------------------------
+Current State: Green_Light at North Direction
+Car1 is moving
+Car2 is moving
+State changed to Red_Light at North Direction
+Car left in North:[10]
+---------------------------------------
+Current State: Red_Light at North Direction
+All Cars are stopped in North Direction
+Cars left in North Direction: [10]
+---------------------------------------
+Adding Car5 in West Direction
+---------------------------------------
+Adding Car6 in South Direction
+---------------------------------------
+Current State: Green_Light at West Direction
+Car3 is moving
+Car5 is moving
+There is no Car in West Direction
+State changed to Red_Light at West Direction
+---------------------------------------
+Adding Car7 in South Direction
+---------------------------------------
+Current State: Green_Light at South Direction
+Car4 is moving
+Car6 is moving
+State changed to Red_Light at South Direction
+Car left in South:[7]
+---------------------------------------
+Adding Car8 in East Direction
+---------------------------------------
+Adding Car9 in East Direction
+---------------------------------------
+Current State: Red_Light at South Direction
+All Cars are stopped in South Direction
+Cars left in South Direction: [7]
+---------------------------------------
+Current State: Green_Light at North Direction
+Car10 is moving
+There is no Car in North Direction
+State changed to Red_Light at North Direction
+---------------------------------------
+Current State: Green_Light at East Direction
+Car8 is moving
+Car9 is moving
+There is no Car in East Direction
+State changed to Red_Light at East Direction
+---------------------------------------
+Current State: Green_Light at South Direction
+Car7 is moving
+There is no Car in South Direction
+State changed to Red_Light at South Direction
+---------------------------------------
+Current State: Green_Light at South Direction
+There is no Car in South Direction
+State changed to Red_Light at South Direction
+---------------------------------------
+Adding Car15 in West Direction
+---------------------------------------
+Current State: Red_Light at East Direction
+There is no Car at East Direction
+---------------------------------------
+Current State: Green_Light at West Direction
+Car15 is moving
+There is no Car in West Direction
+State changed to Red_Light at West Direction

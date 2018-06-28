@@ -10,7 +10,7 @@ public class SetCarGoneStateImpl implements StreetLightsStateI
 		// TODO Auto-generated method stub
 		
 	}
-	DebugLevel GoneState = null;
+	DebugLevel GoneState;
 	@Override
 	public void removeCars(String filename) {
 		// TODO Auto-generated method stub
@@ -19,6 +19,7 @@ public class SetCarGoneStateImpl implements StreetLightsStateI
 	/**
 	 * if the number of cars is equal to 0, then
 	 * cars will go in Gone state
+	 * The first parameter added is the file attribute
 	 */
 	@Override
 	public void carStopState(String filename) 

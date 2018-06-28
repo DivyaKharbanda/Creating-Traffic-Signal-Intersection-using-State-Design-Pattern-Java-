@@ -4,6 +4,7 @@
 3, West
 4, South
 Green light at North Direction
+Red light at North Direction
 5, West
 6, South
 Green light at West Direction

@@ -8,7 +8,8 @@ public class Logger
     };
     static DebugLevel debugLevel;
     
-    public static void setDebugValue (int levelIn) 
+    
+	public void setDebugValue (int levelIn) 
     {
 		switch (levelIn) 
     		{
@@ -31,6 +32,7 @@ public class Logger
         }
 
         public String toString() {
+        	
     	return "The debug level has been set to the following " + debugLevel;
         }
 }

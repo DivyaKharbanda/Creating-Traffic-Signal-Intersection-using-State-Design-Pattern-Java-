@@ -18,7 +18,7 @@ public class SetStartStateImpl implements StreetLightsStateI
 		{
 			StretLightsContext.NorthCars.add(filename.split(",")[0]);
 			String message = "Adding Car"+(filename.split(",")[0])+" in North Direction";
-			Logger.writeMessage(message, StartState);			
+			Logger.writeMessage(message, StartState);	
 		}
 		if(filename.contains(", South"))
 		{

@@ -5,13 +5,17 @@ import fourWayStreetLights.util.Logger.DebugLevel;
 
 public class SetCarMovingStateImpl implements StreetLightsStateI
 {
-
+//
+//	SetStartStateImpl SetStartStateImplObj = new SetStartStateImpl();
+//	SetCarMovingStateImpl Green = new SetCarMovingStateImpl();
+//	SetCarStopStateImpl Red = new SetCarStopStateImpl();
+//	SetCarGoneStateImpl All_Cars_Gone = new SetCarGoneStateImpl();
 	@Override
 	public void insertNewCar(String filename) {
 		// TODO Auto-generated method stub
 		
 	}
-	DebugLevel MovingState = null;
+	DebugLevel MovingState;
 	/**
 	 * This method will check if the light is green
 	 * and according to the direction in input file
@@ -24,6 +28,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				{
 		if(StretLightsContext.NorthCars.size()>2)
 		{
+			StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 			StretLightsContext.currentState = StretLightsContext.Moving;
 			StretLightsContext.carDirection = "North";
 			String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -37,6 +42,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 			Logger.writeMessage(message, MovingState);
 			StretLightsContext.NorthCars.remove(0);
 			
+			StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 			StretLightsContext.currentState = StretLightsContext.Stop;
 			StretLightsContext.carDirection = "North";
 			message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -47,6 +53,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 		}
 		else if(StretLightsContext.NorthCars.size()==2)
 		{
+			StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 			StretLightsContext.currentState = StretLightsContext.Moving;
 			StretLightsContext.carDirection = "North";
 			String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -65,12 +72,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 			message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 			Logger.writeMessage(message, MovingState);
 			
+			StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 			StretLightsContext.currentState = StretLightsContext.Stop;
 			message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 			Logger.writeMessage(message, MovingState);
 		}
 		else if(StretLightsContext.NorthCars.size()==1)
 		{
+			StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 			StretLightsContext.currentState = StretLightsContext.Moving;
 			StretLightsContext.carDirection = "North";
 			String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -85,12 +94,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 			message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 			Logger.writeMessage(message, MovingState);
 			
+			StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 			StretLightsContext.currentState = StretLightsContext.Stop;
 			message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 			Logger.writeMessage(message, MovingState);
 		}
 		else if(StretLightsContext.NorthCars.size()==0)
 		{
+			StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 			StretLightsContext.currentState = StretLightsContext.Moving;
 			StretLightsContext.carDirection = "North";
 			String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -111,6 +122,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 		{	
 			if(StretLightsContext.SouthCars.size()>2)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "South";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -124,6 +136,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				Logger.writeMessage(message, MovingState);
 				StretLightsContext.SouthCars.remove(0);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				StretLightsContext.carDirection = "South";
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -134,6 +147,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 			}
 			else if(StretLightsContext.SouthCars.size()==2)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "South";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -152,12 +166,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 			}
 			else if(StretLightsContext.SouthCars.size()==1)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "South";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -172,12 +188,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 			}
 			else if(StretLightsContext.SouthCars.size()==0)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "South";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -188,6 +206,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
@@ -198,6 +217,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 		{
 			if(StretLightsContext.WestCars.size()>2)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "West";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -211,6 +231,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				Logger.writeMessage(message, MovingState);
 				StretLightsContext.WestCars.remove(0);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				StretLightsContext.carDirection = "West";
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -221,6 +242,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 			}
 			else if(StretLightsContext.WestCars.size()==2)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "West";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -239,12 +261,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 			}
 			else if(StretLightsContext.WestCars.size()==1)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "West";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -259,12 +283,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 			}
 			else if(StretLightsContext.WestCars.size()==0)
 			{
+				StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Moving;
 				StretLightsContext.carDirection = "West";
 				String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -275,6 +301,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
 				
+				StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 				StretLightsContext.currentState = StretLightsContext.Stop;
 				message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 				Logger.writeMessage(message, MovingState);
@@ -285,6 +312,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 		{
 				if(StretLightsContext.EastCars.size()>2)
 				{
+					StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Moving;
 					StretLightsContext.carDirection = "East";
 					String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -298,6 +326,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 					Logger.writeMessage(message, MovingState);
 					StretLightsContext.EastCars.remove(0);
 					
+					StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Stop;
 					StretLightsContext.carDirection = "East";
 					message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -308,6 +337,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 				}
 				else if(StretLightsContext.EastCars.size()==2)
 				{
+					StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Moving;
 					StretLightsContext.carDirection = "East";
 					String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -326,12 +356,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 					message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 					Logger.writeMessage(message, MovingState);
 					
+					StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Stop;
 					message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 					Logger.writeMessage(message, MovingState);
 				}
 				else if(StretLightsContext.EastCars.size()==1)
 				{
+					StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Moving;
 					StretLightsContext.carDirection = "East";
 					String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -346,12 +378,14 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 					message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 					Logger.writeMessage(message, MovingState);
 					
+					StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Stop;
 					message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 					Logger.writeMessage(message, MovingState);
 				}
 				else if(StretLightsContext.EastCars.size()==0)
 				{
+					StretLightsContext.setLight(StretLightsContext.getSetCarMovingStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Moving;
 					StretLightsContext.carDirection = "East";
 					String message = "Current State: "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
@@ -362,6 +396,7 @@ public class SetCarMovingStateImpl implements StreetLightsStateI
 					message = StretLightsContext.currentState+" in "+StretLightsContext.carDirection+" Direction";
 					Logger.writeMessage(message, MovingState);
 					
+					StretLightsContext.setLight(StretLightsContext.getSetCarStopStateImpl());
 					StretLightsContext.currentState = StretLightsContext.Stop;
 					message = "State changed to "+StretLightsContext.currentState+" at "+StretLightsContext.carDirection+" Direction";
 					Logger.writeMessage(message, MovingState);
